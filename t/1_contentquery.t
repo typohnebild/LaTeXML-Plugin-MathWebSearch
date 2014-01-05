@@ -29,19 +29,19 @@ my $content_query = <<'EOQ';
         <m:plus xml:id="p1.1.m1.1.3.cmml" xref="p1.1.m1.1.3"/>
         <m:apply xml:id="p1.1.m1.1.9.1.1.cmml" xref="p1.1.m1.1.9.1.1">
           <m:csymbol cd="ambiguous" xml:id="p1.1.m1.1.9.1.1.1.cmml">superscript</m:csymbol>
-          <m:csymbol cd="latexml" xml:id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">qvar</m:csymbol>
-          <m:csymbol cd="latexml" xml:id="p1.1.m1.1.2.1.cmml" xref="p1.1.m1.1.2.1">qvar</m:csymbol>
+          <mws:qvar>a</mws:qvar>
+          <mws:qvar>n</mws:qvar>
         </m:apply>
         <m:apply xml:id="p1.1.m1.1.9.1.2.cmml" xref="p1.1.m1.1.9.1.2">
           <m:csymbol cd="ambiguous" xml:id="p1.1.m1.1.9.1.2.1.cmml">superscript</m:csymbol>
-          <m:csymbol cd="latexml" xml:id="p1.1.m1.1.4.cmml" xref="p1.1.m1.1.4">qvar</m:csymbol>
-          <m:csymbol cd="latexml" xml:id="p1.1.m1.1.5.1.cmml" xref="p1.1.m1.1.5.1">qvar</m:csymbol>
+          <mws:qvar>b</mws:qvar>
+          <mws:qvar>n</mws:qvar>
         </m:apply>
       </m:apply>
       <m:apply xml:id="p1.1.m1.1.9.2.cmml" xref="p1.1.m1.1.9.2">
         <m:csymbol cd="ambiguous" xml:id="p1.1.m1.1.9.2.1.cmml">superscript</m:csymbol>
-        <m:csymbol cd="latexml" xml:id="p1.1.m1.1.7.cmml" xref="p1.1.m1.1.7">qvar</m:csymbol>
-        <m:csymbol cd="latexml" xml:id="p1.1.m1.1.8.1.cmml" xref="p1.1.m1.1.8.1">qvar</m:csymbol>
+        <mws:qvar>c</mws:qvar>
+        <mws:qvar>n</mws:qvar>
       </m:apply>
     </m:apply>
   </mws:expr>

@@ -5,8 +5,8 @@ use Test::More tests => 3;
 
 my $eval_return = eval {
   use LaTeXML;
-  use LaTeXML::Converter;
-  use LaTeXML::Util::Config;
+  use LaTeXML;
+  use LaTeXML::Common::Config;
   1;
 };
 
@@ -14,8 +14,8 @@ ok($eval_return && !$@, 'LaTeXML modules loaded successfully.');
 
 # Fermat's theorem
 my $tex_input = '?a^?n + ?b^?n=?c^?n';
-my $config = LaTeXML::Util::Config->new(profile=>'mwsquery');
-my $converter = LaTeXML::Converter->get_converter($config);
+my $config = LaTeXML::Common::Config->new(profile=>'mwsquery');
+my $converter = LaTeXML->get_converter($config);
 
 my $response = $converter->convert("literal:".$tex_input);
 

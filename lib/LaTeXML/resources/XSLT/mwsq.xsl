@@ -8,12 +8,6 @@
 <xsl:output method="xml" indent="yes" cdata-section-elements="data"/>
 <xsl:strip-space elements="*"/>
 
-<xsl:template match="/">
-  <mws:expr>
-    <xsl:apply-templates select="//m:annotation-xml[@encoding='MathML-Content']/*[1]"/>
-  </mws:expr>
-</xsl:template>
-
 <xsl:template match="m:csymbol[@cd='mws' and @name='qvar']">
   <mws:qvar>
     <xsl:copy-of select="@type"/>
@@ -21,6 +15,13 @@
   </mws:qvar>
 </xsl:template> 
 
+<xsl:template match="m:annotation-xml[@encoding='MathML-Content']">
+  <m:annotation-xml encoding="MWS-Query">
+    <mws:expr>
+      <xsl:apply-templates/>
+    </mws:expr>
+  </m:annotation-xml>
+</xsl:template>
 <!-- in the fallback case, just copy --> 
 <xsl:template match="*">
   <xsl:copy>

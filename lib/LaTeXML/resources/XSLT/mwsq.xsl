@@ -2,11 +2,16 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:mws = "http://search.mathweb.org/ns"
+    xmlns:ltx="http://dlmf.nist.gov/LaTeXML"
     exclude-result-prefixes="mws"
                 version="1.0">
 
 <xsl:output method="xml" indent="yes" cdata-section-elements="data"/>
 <xsl:strip-space elements="*"/>
+
+<xsl:template match="ltx:Math">
+  <xsl:apply-templates/>
+</xsl:template>
 
 <xsl:template match="m:csymbol[@cd='mws' and @name='qvar']">
   <mws:qvar>

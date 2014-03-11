@@ -17,9 +17,7 @@
 
 <xsl:template match="m:annotation-xml[@encoding='MathML-Content']">
   <m:annotation-xml encoding="MWS-Query">
-    <mws:expr>
-      <xsl:apply-templates/>
-    </mws:expr>
+    <xsl:apply-templates/>
   </m:annotation-xml>
 </xsl:template>
 <!-- in the fallback case, just copy --> 

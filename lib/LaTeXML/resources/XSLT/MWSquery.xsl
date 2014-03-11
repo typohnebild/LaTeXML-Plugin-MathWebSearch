@@ -18,8 +18,8 @@
 
 <xsl:template match="m:csymbol[@cd='mws' and @name='qvar']">
   <mws:qvar>
-    <xsl:value-of select="."/>
     <xsl:copy-of select="@type"/>
+    <xsl:value-of select="."/>
   </mws:qvar>
 </xsl:template> 
 

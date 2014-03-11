@@ -3,7 +3,7 @@
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:mws = "http://search.mathweb.org/ns"
     xmlns:ltx="http://dlmf.nist.gov/LaTeXML"
-    exclude-result-prefixes="mws"
+    exclude-result-prefixes="ltx"
                 version="1.0">
 
 <xsl:output method="xml" indent="yes" cdata-section-elements="data"/>
@@ -21,16 +21,17 @@
 </xsl:template> 
 
 <xsl:template match="m:annotation-xml[@encoding='MathML-Content']">
-  <m:annotation-xml encoding="MWS-Query">
+  <annotation-xml encoding="MWS-Query" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:apply-templates/>
-  </m:annotation-xml>
+  </annotation-xml>
 </xsl:template>
+
 <!-- in the fallback case, just copy --> 
-<xsl:template match="*">
-  <xsl:copy>
+<xsl:template match="m:*">
+  <xsl:element name="{local-name()}" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:copy-of select="@*"/>
     <xsl:apply-templates/>
-  </xsl:copy>
+  </xsl:element>
 </xsl:template>
 
 </xsl:stylesheet>

@@ -1,4 +1,4 @@
 LaTeXML::Plugin::MathWebSearch
 ============================
 
-A LaTeXML extension for generatiing MathWebSearch queries from TeX
+A LaTeXML extension for generating MathWebSearch queries from TeX

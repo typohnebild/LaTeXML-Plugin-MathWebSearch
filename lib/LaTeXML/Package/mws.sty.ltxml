@@ -1,3 +1,4 @@
+#!/usr/bin/perl -w
 # -*- CPERL -*-
 # /=====================================================================\ #
 # |  mws.sty - Implementation for LaTeXML                               | #

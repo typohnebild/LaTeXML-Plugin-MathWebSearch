@@ -13,7 +13,7 @@ WriteMakefile(
   NAME => 'LaTeXML::Plugin::MathWebSearch',
   AUTHOR => 'Deyan Ginev <d.ginev@jacobs-university.de>',
   ABSTRACT => "A LaTeXML extension for generatiing MathWebSearch queries from TeX",
-  VERSION => "0.1",
+  VERSION => "0.2",
   PREREQ_PM => { 
     'LaTeXML'=>'0.8.0',
   },

@@ -20,6 +20,20 @@
   </mws:qvar>
 </xsl:template> 
 
+<xsl:template match="m:apply[@class='simto' and @name]|
+		                    m:mrow[@class='simto' and @name]">
+  <mws:simto >
+    <xsl:copy-of select="@name"/>
+    <xsl:apply-templates/>
+  </mws:simto>
+</xsl:template> 
+
+<xsl:template match="m:apply[@class='exact']|m:mrow[@class='exact']">
+  <mws:exact>
+    <xsl:apply-templates/>
+  </mws:exact>
+</xsl:template> 
+
 <xsl:template match="m:annotation-xml[@encoding='MathML-Content']">
   <annotation-xml encoding="MWS-Query" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:apply-templates/>

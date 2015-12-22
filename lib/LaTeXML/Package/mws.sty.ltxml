@@ -32,8 +32,19 @@ DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
     $type = $gullet->readArg(); }
   return Invocation(T_CS('\qvar@construct'),$var,$type); });
 
+DefConstructor('\exact{}',"<ltx:XMApp meaning='exact' color='blue'>#1</ltx:XMApp>");
+DefConstructor('\simto{}{}',"<ltx:XMApp name='#1' meaning='simto' color='red'>#2</ltx:XMApp>");
+
 package LaTeXML::Post::MathML;
 # Support for rewriting of qvar symbols during post-processing to MathML
 DefMathML('Token:?:qvar', undef, sub { ['m:csymbol', { cd => 'mws', name => 'qvar', type=>$_[0]->getAttribute('type') }, $_[0]->textContent]; });
+
+DefMathML('Apply:?:simto',
+	  sub {
+	    my ($op, @args) = @_;
+	    return ['m:mrow', { class => "simto" }, map { pmml($_) } @args]; },
+	  sub {
+	    my ($op, @args) = @_;
+	    return ['m:apply', { class => "simto" }, map { cmml($_) } @args]; });
 
 1;

@@ -47,4 +47,12 @@ DefMathML('Apply:?:simto',
 	    my ($op, @args) = @_;
 	    return ['m:apply', { class => "simto" }, map { cmml($_) } @args]; });
 
+DefMathML('Apply:?:exact',
+	  sub {
+	    my ($op, @args) = @_;
+	    return ['m:mrow', { class => "exact" }, map { pmml($_) } @args]; },
+	  sub {
+	    my ($op, @args) = @_;
+	    return ['m:apply', { class => "exact" }, map { cmml($_) } @args]; });
+
 1;

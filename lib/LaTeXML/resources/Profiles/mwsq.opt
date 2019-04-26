@@ -28,5 +28,7 @@ preload = color.sty
 preload = [utf8x]inputenc.sty
 preload = txfonts.sty
 preload = stmaryrd.sty
+preload = textcomp.sty
 preload = revsymb.sty
+preload = cancel.sty
 preload = nlab.sty

@@ -133,6 +133,7 @@ DefMacro('\closure{}', '\overline{#1}');
 DefMacro('\widebar{}', '\overline{#1}');
 DefMacro('\widevec{}', '\overrightarrow{#1}');
 DefMacro('\widecheck{}', '\capitalcaron{#1}');
+DefMacro('\slash{}', '\cancel{#1}');
 
 # Delimeter
 DefMacro('\lang', '\langle');
@@ -142,6 +143,10 @@ DefMathI('\rrangle', undef, "\x{27EB}", role => 'CLOSE', stretchy => 'false');
 
 # Fractions and stuff
 DefMacro('\underoverset{}{}{}', '\underset{#1}{\overset{#2}{#3}}');
+#this is also inspired by the \root in TeX.pool
+DefConstructor('\root{}{}', "<ltx:XMApp><ltx:XMTok meaning='nth-root'/>"
+    . "<ltx:XMArg>#1</ltx:XMArg><ltx:XMArg>#2</ltx:XMArg>"
+    . "</ltx:XMApp>");
 
 #helper function for that tensor /multiscript stuff
 #just takes that gullet thingy and returns the Tokens list of just the

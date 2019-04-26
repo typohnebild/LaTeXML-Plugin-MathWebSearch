@@ -29,4 +29,4 @@ preload = [utf8x]inputenc.sty
 preload = txfonts.sty
 preload = stmaryrd.sty
 preload = revsymb.sty
-preload = nlab
+preload = nlab.sty

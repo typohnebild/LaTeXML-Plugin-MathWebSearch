@@ -15,7 +15,6 @@ preload = [dvipsnames]xcolor.sty
 preload = url.sty
 preload = hyperref.sty
 preload = [ids]latexml.sty
-preload = ucs.sty
 preload = mathrsfs.sty
 preload = graphicx.sty
 preload = mathtools.sty

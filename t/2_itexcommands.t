@@ -1,13 +1,15 @@
 use strict;
 use warnings;
+use utf8;
 
 use Test::More tests => 337;
 
 my $testfile="t/itex_test";
 
 open(IN, '<', $testfile) || die "Cannot open $testfile";
-# open(OUT, '>', 'output') || die "Cannot open file";
-
+# open(OUT, '>:utf8', 't/itex_test.xml') || die "Cannot open file";
+# print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+# print OUT "<root>\n";
 
 my $eval_return = eval {
   use LaTeXML;
@@ -20,6 +22,7 @@ ok($eval_return && !$@, 'LaTeXML modules loaded successfully.');
 my $config = LaTeXML::Common::Config->new(paths=>['blib/lib/LaTeXML/resources/Profiles','blib/lib/LaTeXML/resources/XSLT','blib/lib/LaTeXML/Package'],profile=>'mwsq');
 my $converter = LaTeXML->get_converter($config);
 
+my $i = 0;
 foreach my $line (<IN>){
     chomp($line);
     my $response = $converter->convert("literal:$line");
@@ -29,4 +32,5 @@ foreach my $line (<IN>){
 }
 
 close(IN);
+# print OUT "</root>";
 # close(OUT);

@@ -7,7 +7,7 @@ $\overset{u}{\overbrace{w x y z}}$
 $\underset{u}{\underbrace{v w x y z}}$
 $\underset{x y z}{\longrightarrow}$
 $\overset{x y z}{\to}$
-$\stackrel{x y z}{\to},$
+$\stackrel{x y z}{\to}$
 $\underoverset{x y z}{2}{\Rightarrow}$
 $\tensor{X}{_i_j^k^l}$
 $\multiscripts{^2_0_1}{X}{^j_i_k}$

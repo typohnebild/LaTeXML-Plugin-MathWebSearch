@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use LaTeXML::Package;
+RequirePackage('amsmath');
 
 
 # this is a try to get the itex specfic stuff workin
@@ -132,7 +133,7 @@ DefMacro('\Upsi', '\Upsilon');
 DefMacro('\closure{}', '\overline{#1}');
 DefMacro('\widebar{}', '\overline{#1}');
 DefMacro('\widevec{}', '\overrightarrow{#1}');
-DefMacro('\widecheck{}', '\capitalcaron{#1}');
+DefMath('\widecheck Digested', UTF(0x2C7), operator_role => 'OVERACCENT');
 DefMacro('\slash{}', '\cancel{#1}');
 
 # Delimeter

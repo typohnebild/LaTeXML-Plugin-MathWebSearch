@@ -50,4 +50,3 @@ EOQ
 
 is($response->{status_code},0,'Conversion was problem-free.');
 is($response->{result},$content_query,'Content query successfully generated');
-

@@ -24,7 +24,7 @@ DefConstructor('\qvar@construct Semiverbatim OptionalSemiverbatim','<ltx:XMTok n
 # And for authoring simplicity, we use ?X as an alias to \qvar{X}
 AssignMathcode('?'=>0x8000, 'global');
 DefMacro('?','\qvar');
-DefMacro('\qvar Semiverbatim OptionalMatch::',sub{ 
+DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
   my ($gullet,$var,$type_declaration) = @_;
   # Allowing for an optional type argument:
   my $type;
@@ -32,8 +32,18 @@ DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
     $type = $gullet->readArg(); }
   return Invocation(T_CS('\qvar@construct'),$var,$type); });
 
+# attempt to implement mws:range
+DefConstructor('\range{}{}', "<ltx:XMApp>"
+    ."<ltx:XMTok name='range' meaning='range' role='OPERATOR'/>"
+    ."<ltx:XMArg>#1</ltx:XMArg>"
+    ."<ltx:XMArg>#2</ltx:XMArg>"
+    ."</ltx:XMApp>");
+
 package LaTeXML::Post::MathML;
 # Support for rewriting of qvar symbols during post-processing to MathML
 DefMathML('Token:?:qvar', undef, sub { ['m:csymbol', { cd => 'mws', name => 'qvar', type=>$_[0]->getAttribute('type') }, $_[0]->textContent]; });
+
+DefMathML('Apply:?:range', undef, sub { ['m:csymbol', { cd => 'mws', name => 'range', low=>$_[1]->textContent, high=>$_[2]->textContent}, 'range']; });
+
 
 1;

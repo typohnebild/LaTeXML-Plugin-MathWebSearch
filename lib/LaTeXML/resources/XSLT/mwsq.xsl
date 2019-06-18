@@ -20,6 +20,14 @@
   </mws:qvar>
 </xsl:template> 
 
+<xsl:template match="m:csymbol[@cd='mws' and @name='range']">
+  <mws:range>
+    <xsl:copy-of select="@low"/>
+    <xsl:copy-of select="@high"/>
+    <xsl:value-of select="."/>
+  </mws:range>
+</xsl:template> 
+
 <xsl:template match="m:annotation-xml[@encoding='MathML-Content']">
   <annotation-xml encoding="MWS-Query" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:apply-templates/>

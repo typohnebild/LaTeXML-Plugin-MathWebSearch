@@ -33,17 +33,26 @@ DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
   return Invocation(T_CS('\qvar@construct'),$var,$type); });
 
 # attempt to implement mws:range
-DefConstructor('\range{}{}', "<ltx:XMApp>"
-    ."<ltx:XMTok name='range' meaning='range' role='OPERATOR'/>"
-    ."<ltx:XMArg>#1</ltx:XMArg>"
-    ."<ltx:XMArg>#2</ltx:XMArg>"
+DefConstructor('\range{}{}', "<ltx:XMApp color='red'>"
+    ."<ltx:XMTok name='range' meaning='range' role='OPERATOR' color='red'/>"
+    ."<ltx:XMArg color='red'>#1</ltx:XMArg>"
+    ."<ltx:XMArg color='red'>#2</ltx:XMArg>"
     ."</ltx:XMApp>");
 
 package LaTeXML::Post::MathML;
 # Support for rewriting of qvar symbols during post-processing to MathML
 DefMathML('Token:?:qvar', undef, sub { ['m:csymbol', { cd => 'mws', name => 'qvar', type=>$_[0]->getAttribute('type') }, $_[0]->textContent]; });
 
-DefMathML('Apply:?:range', undef, sub { ['m:csymbol', { cd => 'mws', name => 'range', low=>$_[1]->textContent, high=>$_[2]->textContent}, 'range']; });
+DefMathML('Apply:?:range',
+    sub {
+        my $low = $_[1]->textContent;
+        my $high = $_[2]->textContent;
+        pmml_parenthesize("$low - $high", '[', ']');
+    }
+    ,
+    sub {
+        ['m:csymbol', { cd => 'mws', name => 'range', low=>$_[1]->textContent, high=>$_[2]->textContent}, 'range'];
+    });
 
 
 1;

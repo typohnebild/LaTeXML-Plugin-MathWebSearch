@@ -10,6 +10,6 @@ chomp $cwd;
 $cwd = $cwd . "/blib/script/latexmlc";
 symlink $latexmlc, $cwd || die "symlink doesn't work";
 
-latexml_tests("t/mws_range", requires =>{mwsq=>'dvipsnam.def'});
+latexml_tests("t/mws_range", requires => {mwsq=>'dvipsnam.def'});
 
 1;

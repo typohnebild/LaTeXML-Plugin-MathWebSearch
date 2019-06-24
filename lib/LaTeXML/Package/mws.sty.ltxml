@@ -47,11 +47,26 @@ DefMathML('Apply:?:range',
     sub {
         my $low = $_[1]->textContent;
         my $high = $_[2]->textContent;
-        pmml_parenthesize("$low - $high", '[', ']');
+        pmml_parenthesize("$low...$high", '[', ']');
     }
     ,
     sub {
-        ['m:csymbol', { cd => 'mws', name => 'range', low=>$_[1]->textContent, high=>$_[2]->textContent}, 'range'];
+        # i sure perl provides a more elegant solution for that but atm i dont
+        # get it
+        my $low = $_[1]->textContent;
+        my $high = $_[2]->textContent;
+        if($low && $high){
+            return ['m:csymbol', { cd => 'mws', name => 'range', low=>"$low", high=>"$high"}, 'range'];
+        }
+        elsif($low){
+            return ['m:csymbol', { cd => 'mws', name => 'range', low=>"$low"}, 'range'];
+        }
+        elsif($high){
+            return ['m:csymbol', { cd => 'mws', name => 'range', high=>"$high"}, 'range'];
+        }
+        else{
+            return ['m:csymbol', { cd => 'mws', name => 'range'}, 'range'];
+        }
     });
 
 

@@ -5,11 +5,11 @@ use File::Copy qw(copy);
 
 my $latexmlc = `which latexmlc`;
 chomp $latexmlc;
-my $cwd = `pwd`;
-chomp $cwd;
-$cwd = $cwd . "/blib/script/latexmlc";
+my $pwd = `pwd`;
+chomp $pwd;
+my $cwd = $pwd . "/blib/script/latexmlc";
 symlink $latexmlc, $cwd || die "symlink doesn't work";
 
-latexml_tests("t/mws_range", requires => {mwsq=>'dvipsnam.def'});
+latexml_tests($pwd . "/t/mws_range", requires => {mwsq=>'dvipsnam.def'});
 
 1;

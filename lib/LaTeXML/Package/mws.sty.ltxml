@@ -33,11 +33,25 @@ DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
   return Invocation(T_CS('\qvar@construct'),$var,$type); });
 
 # attempt to implement mws:range
-DefConstructor('\range{}{}', "<ltx:XMApp color='red'>"
+# this should take the lower and the upper bound
+DefConstructor('\range{}{}',  "<ltx:XMApp color='red'>"
     ."<ltx:XMTok name='range' meaning='range' role='OPERATOR' color='red'/>"
     ."<ltx:XMArg color='red'>#1</ltx:XMArg>"
     ."<ltx:XMArg color='red'>#2</ltx:XMArg>"
     ."</ltx:XMApp>");
+
+# this is a binding for relative ranges
+# it takes a base value and a percentage and creates a range with base +-
+# precentage% 
+DefMacro('\relrange{}{}', sub {
+        my ($gullet, $val , $fac) = @_;
+        my $num = ToString($val);
+        my $factor = ToString($fac);
+        my $diff = $factor/100 * $num;
+        my $low = sprintf "%.2f", $num - $diff;
+        my $high = sprintf "%.2f", $num + $diff;
+        return Invocation(T_CS('\range'), $low, $high);
+    });
 
 package LaTeXML::Post::MathML;
 # Support for rewriting of qvar symbols during post-processing to MathML
@@ -51,7 +65,7 @@ DefMathML('Apply:?:range',
     }
     ,
     sub {
-        # i sure perl provides a more elegant solution for that but atm i dont
+        # i am sure perl provides a more elegant solution for that but atm i dont
         # get it
         my $low = $_[1]->textContent;
         my $high = $_[2]->textContent;

@@ -1,32 +1,43 @@
-<math xmlns="http://www.w3.org/1998/Math/MathML" alttext="\range{1}{5}\range{}{5}\range{1}{}\range{}{}\range{1}{5}+\qvar@construct{x}" display="inline" xml:id="p1.1.m1.1">
+<math xmlns="http://www.w3.org/1998/Math/MathML" alttext="\range{1}{5}\range{}{5}\range{1}{}\range{}{}\range{1}{5}+\qvar@construct{x}%&#10;\range{9.00}{11.00}\range{47.50}{52.50}" display="inline" xml:id="p1.1.m1.1">
   <semantics xml:id="p1.1.m1.1a">
-    <mrow xml:id="p1.1.m1.1.8" xref="p1.1.m1.1.8.cmml">
-      <mrow xml:id="p1.1.m1.1.8.1" xref="p1.1.m1.1.8.1.cmml">
+    <mrow xml:id="p1.1.m1.1.10" xref="p1.1.m1.1.10.cmml">
+      <mrow xml:id="p1.1.m1.1.10.1" xref="p1.1.m1.1.10.1.cmml">
         <mrow xml:id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.1a" xref="p1.1.m1.1.1.cmml">[</mo>1...5<mo mathcolor="red" xml:id="p1.1.m1.1.1b" xref="p1.1.m1.1.1.cmml">]</mo></mrow>
-        <mo xml:id="p1.1.m1.1.8.1.1" xref="p1.1.m1.1.8.1.1.cmml">⁢</mo>
+        <mo xml:id="p1.1.m1.1.10.1.1" xref="p1.1.m1.1.10.1.1.cmml">⁢</mo>
         <mrow xml:id="p1.1.m1.1.2" xref="p1.1.m1.1.2.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.2a" xref="p1.1.m1.1.2.cmml">[</mo>...5<mo mathcolor="red" xml:id="p1.1.m1.1.2b" xref="p1.1.m1.1.2.cmml">]</mo></mrow>
-        <mo xml:id="p1.1.m1.1.8.1.1a" xref="p1.1.m1.1.8.1.1.cmml">⁢</mo>
+        <mo xml:id="p1.1.m1.1.10.1.1a" xref="p1.1.m1.1.10.1.1.cmml">⁢</mo>
         <mrow xml:id="p1.1.m1.1.3" xref="p1.1.m1.1.3.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.3a" xref="p1.1.m1.1.3.cmml">[</mo>1...<mo mathcolor="red" xml:id="p1.1.m1.1.3b" xref="p1.1.m1.1.3.cmml">]</mo></mrow>
-        <mo xml:id="p1.1.m1.1.8.1.1b" xref="p1.1.m1.1.8.1.1.cmml">⁢</mo>
+        <mo xml:id="p1.1.m1.1.10.1.1b" xref="p1.1.m1.1.10.1.1.cmml">⁢</mo>
         <mrow xml:id="p1.1.m1.1.4" xref="p1.1.m1.1.4.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.4a" xref="p1.1.m1.1.4.cmml">[</mo>...<mo mathcolor="red" xml:id="p1.1.m1.1.4b" xref="p1.1.m1.1.4.cmml">]</mo></mrow>
-        <mo xml:id="p1.1.m1.1.8.1.1c" xref="p1.1.m1.1.8.1.1.cmml">⁢</mo>
+        <mo xml:id="p1.1.m1.1.10.1.1c" xref="p1.1.m1.1.10.1.1.cmml">⁢</mo>
         <mrow xml:id="p1.1.m1.1.5" xref="p1.1.m1.1.5.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.5a" xref="p1.1.m1.1.5.cmml">[</mo>1...5<mo mathcolor="red" xml:id="p1.1.m1.1.5b" xref="p1.1.m1.1.5.cmml">]</mo></mrow>
       </mrow>
       <mo xml:id="p1.1.m1.1.6" xref="p1.1.m1.1.6.cmml">+</mo>
-      <mi mathcolor="red" xml:id="p1.1.m1.1.7" xref="p1.1.m1.1.7.cmml">x</mi>
+      <mrow xml:id="p1.1.m1.1.10.2" xref="p1.1.m1.1.10.2.cmml">
+        <mi mathcolor="red" xml:id="p1.1.m1.1.7" xref="p1.1.m1.1.7.cmml">x</mi>
+        <mo xml:id="p1.1.m1.1.10.2.1" xref="p1.1.m1.1.10.2.1.cmml">⁢</mo>
+        <mrow xml:id="p1.1.m1.1.8" xref="p1.1.m1.1.8.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.8a" xref="p1.1.m1.1.8.cmml">[</mo>9.00...11.00<mo mathcolor="red" xml:id="p1.1.m1.1.8b" xref="p1.1.m1.1.8.cmml">]</mo></mrow>
+        <mo xml:id="p1.1.m1.1.10.2.1a" xref="p1.1.m1.1.10.2.1.cmml">⁢</mo>
+        <mrow xml:id="p1.1.m1.1.9" xref="p1.1.m1.1.9.cmml"><mo mathcolor="red" xml:id="p1.1.m1.1.9a" xref="p1.1.m1.1.9.cmml">[</mo>47.50...52.50<mo mathcolor="red" xml:id="p1.1.m1.1.9b" xref="p1.1.m1.1.9.cmml">]</mo></mrow>
+      </mrow>
     </mrow>
     <annotation-xml xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:mws="http://search.mathweb.org/ns" encoding="MWS-Query">
-      <apply xml:id="p1.1.m1.1.8.cmml" xref="p1.1.m1.1.8">
+      <apply xml:id="p1.1.m1.1.10.cmml" xref="p1.1.m1.1.10">
         <plus xml:id="p1.1.m1.1.6.cmml" xref="p1.1.m1.1.6"/>
-        <apply xml:id="p1.1.m1.1.8.1.cmml" xref="p1.1.m1.1.8.1">
-          <times xml:id="p1.1.m1.1.8.1.1.cmml" xref="p1.1.m1.1.8.1.1"/>
+        <apply xml:id="p1.1.m1.1.10.1.cmml" xref="p1.1.m1.1.10.1">
+          <times xml:id="p1.1.m1.1.10.1.1.cmml" xref="p1.1.m1.1.10.1.1"/>
           <mws:range low="1" high="5">range</mws:range>
           <mws:range high="5">range</mws:range>
           <mws:range low="1">range</mws:range>
           <mws:range>range</mws:range>
           <mws:range low="1" high="5">range</mws:range>
         </apply>
-        <mws:qvar>x</mws:qvar>
+        <apply xml:id="p1.1.m1.1.10.2.cmml" xref="p1.1.m1.1.10.2">
+          <times xml:id="p1.1.m1.1.10.2.1.cmml" xref="p1.1.m1.1.10.2.1"/>
+          <mws:qvar>x</mws:qvar>
+          <mws:range low="9.00" high="11.00">range</mws:range>
+          <mws:range low="47.50" high="52.50">range</mws:range>
+        </apply>
       </apply>
     </annotation-xml>
   </semantics>

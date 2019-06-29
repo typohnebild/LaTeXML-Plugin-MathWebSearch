@@ -42,12 +42,13 @@ DefConstructor('\range{}{}',  "<ltx:XMApp color='red'>"
 
 # this is a binding for relative ranges
 # it takes a base value and a percentage and creates a range with base +-
-# precentage% 
+# precentage%
 DefMacro('\relrange{}{}', sub {
         my ($gullet, $val , $fac) = @_;
         my $num = ToString($val);
         my $factor = ToString($fac);
-        my $diff = $factor/100 * $num;
+        my $diff = $factor/100 * ( $num || 1 ); # to do something usefull wenn $num = 0
+        # i'll say thats enough precession
         my $low = sprintf "%.2f", $num - $diff;
         my $high = sprintf "%.2f", $num + $diff;
         return Invocation(T_CS('\range'), $low, $high);

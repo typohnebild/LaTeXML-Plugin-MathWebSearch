@@ -1,7 +1,9 @@
 use LaTeXML::Util::Test;
-use File::Copy qw(copy);
 
-# Ok i'll guess this is a realy dirty workaround, but hmmm
+# Ok I'll guess this is a really dirty workaround, but hmmm
+# it seems still necessary to make test from this context possible.
+# Because the test programm expects a latexmlc executable in blib/scripts
+# but were here in the Plugin context so this the way I found to provide this
 
 my $latexmlc = `which latexmlc`;
 chomp $latexmlc;

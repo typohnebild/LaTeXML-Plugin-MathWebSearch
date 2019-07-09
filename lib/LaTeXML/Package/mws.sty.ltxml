@@ -38,7 +38,7 @@ DefConstructor('\range{}{}',  "<ltx:XMApp color='red'>"
     ."<ltx:XMTok name='range' meaning='range' role='OPERATOR' color='red'/>"
     ."<ltx:XMArg color='red'>#1</ltx:XMArg>"
     ."<ltx:XMArg color='red'>#2</ltx:XMArg>"
-    ."</ltx:XMApp>");
+    ."</ltx:XMApp>", requireMath => 1);
 
 # this is a binding for relative ranges
 # it takes a base value and a percentage and creates a range with base +-
@@ -62,7 +62,7 @@ DefMathML('Apply:?:range',
     sub {
         my $low = $_[1]->textContent;
         my $high = $_[2]->textContent;
-        pmml_parenthesize("$low...$high", '[', ']');
+        pmml_parenthesize(pmml_mn("$low...$high"), '[', ']');
     }
     ,
     sub {

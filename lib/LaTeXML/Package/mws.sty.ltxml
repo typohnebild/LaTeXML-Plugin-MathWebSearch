@@ -24,7 +24,7 @@ DefConstructor('\qvar@construct Semiverbatim OptionalSemiverbatim','<ltx:XMTok n
 # And for authoring simplicity, we use ?X as an alias to \qvar{X}
 AssignMathcode('?'=>0x8000, 'global');
 DefMacro('?','\qvar');
-DefMacro('\qvar Semiverbatim OptionalMatch::',sub{ 
+DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
   my ($gullet,$var,$type_declaration) = @_;
   # Allowing for an optional type argument:
   my $type;
@@ -32,8 +32,57 @@ DefMacro('\qvar Semiverbatim OptionalMatch::',sub{
     $type = $gullet->readArg(); }
   return Invocation(T_CS('\qvar@construct'),$var,$type); });
 
+# attempt to implement mws:range
+# this should take the lower and the upper bound
+DefConstructor('\range{}{}',  "<ltx:XMApp color='red'>"
+    ."<ltx:XMTok name='range' meaning='range' role='OPERATOR' color='red'/>"
+    ."<ltx:XMArg color='red'>#1</ltx:XMArg>"
+    ."<ltx:XMArg color='red'>#2</ltx:XMArg>"
+    ."</ltx:XMApp>", requireMath => 1);
+
+# this is a binding for relative ranges
+# it takes a base value and a percentage and creates a range with base +-
+# precentage%
+DefMacro('\relrange{}{}', sub {
+        my ($gullet, $val , $fac) = @_;
+        my $num = ToString($val);
+        my $factor = ToString($fac);
+        my $diff = $factor/100 * ( $num || 1 ); # to do something usefull wenn $num = 0
+        # i'll say thats enough precession
+        my $low = sprintf "%.2f", $num - $diff;
+        my $high = sprintf "%.2f", $num + $diff;
+        return Invocation(T_CS('\range'), $low, $high);
+    });
+
 package LaTeXML::Post::MathML;
 # Support for rewriting of qvar symbols during post-processing to MathML
 DefMathML('Token:?:qvar', undef, sub { ['m:csymbol', { cd => 'mws', name => 'qvar', type=>$_[0]->getAttribute('type') }, $_[0]->textContent]; });
+
+DefMathML('Apply:?:range',
+    sub {
+        my $low = $_[1]->textContent;
+        my $high = $_[2]->textContent;
+        pmml_parenthesize(pmml_mn("$low...$high"), '[', ']');
+    }
+    ,
+    sub {
+        # i am sure perl provides a more elegant solution for that but atm i dont
+        # get it
+        my $low = $_[1]->textContent;
+        my $high = $_[2]->textContent;
+        if($low && $high){
+            return ['m:csymbol', { cd => 'mws', name => 'range', low=>"$low", high=>"$high"}, 'range'];
+        }
+        elsif($low){
+            return ['m:csymbol', { cd => 'mws', name => 'range', low=>"$low"}, 'range'];
+        }
+        elsif($high){
+            return ['m:csymbol', { cd => 'mws', name => 'range', high=>"$high"}, 'range'];
+        }
+        else{
+            return ['m:csymbol', { cd => 'mws', name => 'range'}, 'range'];
+        }
+    });
+
 
 1;

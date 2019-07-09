@@ -21,9 +21,17 @@
     <xsl:copy-of select="@type"/>
     <xsl:value-of select="."/>
   </mws:qvar>
-</xsl:template> 
+</xsl:template>
 
-<!-- in the fallback case, just copy --> 
+<xsl:template match="m:csymbol[@cd='mws' and @name='range']">
+  <mws:range>
+    <xsl:copy-of select="@low"/>
+    <xsl:copy-of select="@high"/>
+    <xsl:value-of select="."/>
+  </mws:range>
+</xsl:template>
+
+<!-- in the fallback case, just copy -->
 <xsl:template match="*">
   <xsl:copy>
     <xsl:copy-of select="@*"/>

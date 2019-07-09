@@ -18,7 +18,15 @@
     <xsl:copy-of select="@type"/>
     <xsl:value-of select="."/>
   </mws:qvar>
-</xsl:template> 
+</xsl:template>
+
+<xsl:template match="m:csymbol[@cd='mws' and @name='range']">
+  <mws:range>
+    <xsl:copy-of select="@low"/>
+    <xsl:copy-of select="@high"/>
+    <xsl:value-of select="."/>
+  </mws:range>
+</xsl:template>
 
 <xsl:template match="m:annotation-xml[@encoding='MathML-Content']">
   <annotation-xml encoding="MWS-Query" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -26,7 +34,7 @@
   </annotation-xml>
 </xsl:template>
 
-<!-- in the fallback case, just copy --> 
+<!-- in the fallback case, just copy -->
 <xsl:template match="m:*">
   <xsl:element name="{local-name()}" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:copy-of select="@*"/>

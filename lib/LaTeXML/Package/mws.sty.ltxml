@@ -66,18 +66,17 @@ DefMathML('Apply:?:range',
     }
     ,
     sub {
-        # i am sure perl provides a more elegant solution for that but atm i dont
-        # get it
         my $low = $_[1]->textContent;
         my $high = $_[2]->textContent;
         my $attr = {
          cd => 'mws',
          name => 'range'
         };
-        if(defined $low && $low ne ''){
+        # check if there are values for high and low
+        if(length($low)){
             $attr->{'low'} = $low;
         }
-        if(defined $high && $high ne ''){
+        if(length($high)){
             $attr->{'high'} = $high;
         }
 

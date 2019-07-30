@@ -14,8 +14,8 @@ WriteMakefile(
   AUTHOR => 'Deyan Ginev <d.ginev@jacobs-university.de>',
   ABSTRACT => "A LaTeXML extension for generatiing MathWebSearch queries from TeX",
   VERSION => "0.2",
-  PREREQ_PM => { 
-    'LaTeXML'=>'0.8.0',
+  PREREQ_PM => {
+    'LaTeXML'=>'0.8.4',
   },
   (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
     'meta-spec' => { version => 2 },

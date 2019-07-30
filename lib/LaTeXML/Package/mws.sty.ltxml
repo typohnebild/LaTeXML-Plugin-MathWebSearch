@@ -74,10 +74,10 @@ DefMathML('Apply:?:range',
          cd => 'mws',
          name => 'range'
         };
-        if($low eq 0 || $low){
+        if(defined $low && $low ne ''){
             $attr->{'low'} = $low;
         }
-        if($high eq 0 || $high){
+        if(defined $high && $high ne ''){
             $attr->{'high'} = $high;
         }
 

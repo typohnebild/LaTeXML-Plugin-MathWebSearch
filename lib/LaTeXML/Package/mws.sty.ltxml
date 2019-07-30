@@ -70,18 +70,18 @@ DefMathML('Apply:?:range',
         # get it
         my $low = $_[1]->textContent;
         my $high = $_[2]->textContent;
-        if($low && $high){
-            return ['m:csymbol', { cd => 'mws', name => 'range', low=>"$low", high=>"$high"}, 'range'];
+        my $attr = {
+         cd => 'mws',
+         name => 'range'
+        };
+        if($low eq 0 || $low){
+            $attr->{'low'} = $low;
         }
-        elsif($low){
-            return ['m:csymbol', { cd => 'mws', name => 'range', low=>"$low"}, 'range'];
+        if($high eq 0 || $high){
+            $attr->{'high'} = $high;
         }
-        elsif($high){
-            return ['m:csymbol', { cd => 'mws', name => 'range', high=>"$high"}, 'range'];
-        }
-        else{
-            return ['m:csymbol', { cd => 'mws', name => 'range'}, 'range'];
-        }
+
+        return ['m:csymbol', $attr, 'range'];
     });
 
 

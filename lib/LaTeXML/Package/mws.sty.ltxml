@@ -19,7 +19,7 @@ use LaTeXML::Post::MathML;
 
 #Experimental: MathWebSearch
 # We want \qvar{X} to represent a "query variable" X for the MathWebSearch query.
-DefConstructor('\qvar@construct Semiverbatim OptionalSemiverbatim','<ltx:XMTok name="qvar" meaning="qvar" color="red" ?#2(type="#2")>#1</ltx:XMTok>',requireMath=>1);
+DefConstructor('\qvar@construct Semiverbatim Optional','<ltx:XMTok name="qvar" meaning="qvar" color="red" ?#2(type="#2")>#1</ltx:XMTok>',requireMath=>1);
 
 # And for authoring simplicity, we use ?X as an alias to \qvar{X}
 AssignMathcode('?'=>0x8000, 'global');
